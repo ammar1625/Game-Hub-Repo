@@ -1,0 +1,251 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base
+{
+   body
+   {
+     @apply h-screen w-[100%] bg-neutral-100  dark:bg-neutral-900 flex flex-col justify-start items-center
+     transition-all duration-500 
+   } 
+   
+   .app-ctr
+   {
+     @apply w-[100%] h-[93.2%] /*height will be changed later*/
+   }
+
+   /*nav bar styles*/
+   .nav-bar
+   {
+     @apply w-[100%] flex flex-row justify-evenly items-center /* border-2 border-red-600 */
+   }
+
+   .input-ctr
+   {
+     @apply w-[75%] flex justify-center items-center
+   }
+
+   .search-input
+   {
+     @apply w-[100%] h-12 dark:bg-neutral-700 bg-neutral-300
+      rounded-3xl text-neutral-700 dark:text-neutral-200 text-xl font-sans font-medium outline-none px-16
+       placeholder:text-neutral-500
+   }
+
+   .search-btn
+   {
+     @apply transform translate-x-12 hover:opacity-50 transition-all duration-200
+   }
+
+   .mode-ctr
+   {
+     @apply flex justify-between items-center
+   }
+
+   .mode-label
+   {
+     @apply text-xl font-sans font-medium dark:text-white text-neutral-800  ml-3
+   }
+
+   /*main body ctr styles*/
+   .main-body-ctr
+   {
+      @apply w-[100%] h-[100%] /*  border-emerald-500 */
+      flex justify-between items-start
+   }
+
+   /* side bar styles*/
+   .side-bar
+   {
+     @apply flex-[1] /* border-2 border-yellow-400 */ h-[100%] 
+     flex flex-col justify-start items-start pt-12 pl-7
+   }
+
+   .genres-list
+   {
+     @apply /*  border-purple-400 */ w-[50%]
+   }
+
+   .side-bar-title
+   {
+     @apply text-3xl font-sans font-semibold dark:text-white text-neutral-800 mb-3
+   }
+
+
+
+   .genre-item
+   {
+     @apply flex justify-start items-center mb-4
+   }
+
+   .genre-pic
+   {
+     @apply w-14 h-14 object-cover rounded-xl mr-4
+   }
+
+   .genre-name
+   {
+     @apply text-lg font-sans font-medium dark:text-white text-neutral-700 hover:opacity-40 hover:cursor-pointer transition-all duration-300
+   }
+   /*games ctr styles*/
+   .games-ctr
+   {
+     @apply flex-[3]   h-auto
+   }
+
+   /*games filter ctr styles*/
+
+   .games-filter-ctr
+   {
+     @apply  py-6 pl-5 
+   }
+
+   .filtered-games-title
+   {
+     @apply text-4xl dark:text-white text-neutral-800 font-sans font-bold mb-7
+   }
+
+   .select-filters-ctr
+   {
+     @apply w-[41%]  flex justify-between items-center
+   }
+
+   .order-options
+   {
+     @apply  dark:bg-neutral-700 bg-neutral-300 text-xl font-sans font-medium dark:text-white text-neutral-800 rounded-lg px-2 py-1 outline-none
+   }
+
+   .platform-options 
+   {
+     @apply  dark:bg-neutral-700 bg-neutral-300 text-xl font-sans font-medium dark:text-white text-neutral-800 rounded-lg px-2 py-1 outline-none
+   }
+
+   
+
+   /*games grid styles*/
+
+   .games-grid
+   {
+     @apply  h-auto grid grid-cols-3 gap-x-10 gap-y-6
+     px-5 py-5
+   }
+
+   .game
+   {
+     @apply flex flex-col justify-between items-start h-96 
+     rounded-xl  dark:bg-neutral-800 bg-neutral-300 shadow-2xl shadow-black
+   }
+
+   .game-pic
+   {
+     @apply rounded-t-lg h-[55%]
+   }
+
+   .platform-rating-ctr
+   {
+     @apply flex justify-around items-center w-[100%]
+   }
+
+   .platforms-ctr
+   {
+     @apply flex justify-evenly items-center flex-[3]
+   }
+   .rating
+   {
+     @apply flex-[1] text-center text-xl font-sans font-bold dark:text-emerald-200 text-emerald-800
+      dark:bg-emerald-950 bg-emerald-300 rounded-xl
+      mr-2
+   }
+
+   .platform-img
+   {
+     @apply w-8
+   }
+
+   .game-name
+   {
+     @apply dark:text-white text-neutral-800 font-sans font-bold text-3xl ml-5 
+   }
+
+   .imoji
+   {
+     @apply w-11 ml-5 mb-4
+   }
+
+   .error-msg
+   {
+     @apply text-red-500 text-3xl mt-14 ml-44 w-52 font-sans font-bold
+   }
+
+   .side-bar-error-msg
+   {
+     @apply ml-14 text-2xl
+   }
+
+   .spinner-ctr
+   {
+     @apply flex justify-center items-center min-h-screen transform translate-y-[-180px] translate-x-52
+   }
+
+   .spinner
+   {
+     @apply w-16 h-16 border-4 border-t-transparent border-blue-500 border-solid rounded-full animate-spin
+   }
+
+   .side-spinner-ctr
+   {
+     @apply translate-y-[-150px] translate-x-24
+   }
+
+   .side-bar-spinner
+   {
+     @apply w-9 h-9
+   }
+
+  
+}
+
+@layer components {
+  .mode-switcher {
+    @apply w-10 h-2 bg-gray-300 rounded-full transition-all duration-500;
+    -webkit-appearance: none; /* Remove default styles for WebKit-based browsers */
+    appearance: none; /* Remove default styles for other browsers */
+  }
+
+  /* Webkit Browsers (Edge, Chrome, Safari) - Thumb */
+  .mode-switcher::-webkit-slider-thumb {
+    @apply w-6 h-6 bg-white rounded-full cursor-pointer transition-all duration-200;
+    -webkit-appearance: none; /* Remove default WebKit thumb styles */
+  }
+
+  /* Webkit Browsers (Edge, Chrome, Safari) - Track */
+  .mode-switcher::-webkit-slider-runnable-track {
+    @apply h-6 bg-emerald-300 rounded-full;
+    -webkit-appearance: none; /* Remove default WebKit track styles */
+  }
+
+  .disabled {
+    @apply w-10 h-2 bg-gray-300 rounded-full transition-all duration-500;
+    -webkit-appearance: none; /* Remove default styles for WebKit-based browsers */
+    appearance: none; /* Remove default styles for other browsers */
+  }
+
+  /* Webkit Browsers (Edge, Chrome, Safari) - Thumb */
+  .disabled::-webkit-slider-thumb {
+    @apply w-6 h-6 bg-white rounded-full cursor-pointer transition-all duration-200;
+    -webkit-appearance: none; /* Remove default WebKit thumb styles */
+  }
+
+  /* Webkit Browsers (Edge, Chrome, Safari) - Track */
+  .disabled::-webkit-slider-runnable-track {
+    @apply h-6 bg-gray-300 rounded-full;
+    -webkit-appearance: none; /* Remove default WebKit track styles */
+  }
+
+ 
+
+}
+
+
+
