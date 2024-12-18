@@ -203,6 +203,31 @@
      @apply w-9 h-9
    }
 
+   .skeleton-ctr
+   {
+     @apply max-w-sm w-full dark:bg-neutral-600 bg-neutral-300 rounded-2xl shadow-lg p-4 animate-pulse
+   }
+
+   .skeleton-l1
+   {
+     @apply bg-neutral-700 h-6 rounded w-3/4
+   }
+
+   .skeleton-l2
+   {
+     @apply bg-neutral-700 h-4 rounded w-full
+   }
+
+   .skeleton-l3
+   {
+     @apply bg-neutral-700 h-4 rounded w-5/6
+   }
+
+   .skeleton-l4
+   {
+     @apply bg-neutral-700 h-4 rounded w-2/3
+   }
+
   
 }
 

@@ -61,7 +61,7 @@ function App() {
         setError("");
         setTimeout(()=>{
           setLoading(false);
-        },3500);
+        },2500);
       } else {
         throw new Error(res.statusText);
       }
@@ -81,7 +81,7 @@ function App() {
         setError("");
         setTimeout(()=>{
           setLoading(false);
-        },3500);
+        },2500);
         
       }
     } catch (err) {

@@ -149,13 +149,13 @@ function GamesGrid({ games, genresFilter , platformFilter ,searchText ,sortFilte
     function loadingSkeleton()
     {
        let skeletons =  [1,2,3,4,5,6];
-       return skeletons.map(sk=><div className="max-w-sm w-full bg-neutral-400 rounded-2xl shadow-lg p-4 animate-pulse">
+       return skeletons.map(sk=><div key={sk} className="skeleton-ctr">
         <div className="bg-neutral-500 h-48 w-full rounded-md mb-4"></div>
         <div className="space-y-4">
-          <div className="bg-neutral-500 h-6 rounded w-3/4"></div>
-          <div className="bg-neutral-500 h-4 rounded w-full"></div>
-          <div className="bg-neutral-500 h-4 rounded w-5/6"></div>
-          <div className="bg-neutral-500 h-4 rounded w-2/3"></div>
+          <div className="skeleton-l1"></div>
+          <div className="skeleton-l2"></div>
+          <div className="skeleton-l3"></div>
+          <div className="skeleton-l4"></div>
         </div>
       </div>) ;
     }
