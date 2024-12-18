@@ -145,6 +145,20 @@ function GamesGrid({ games, genresFilter , platformFilter ,searchText ,sortFilte
       }
       return 0;  // If types don't match (this case shouldn't happen with correct data)
     }
+
+    function loadingSkeleton()
+    {
+       let skeletons =  [1,2,3,4,5,6];
+       return skeletons.map(sk=><div className="max-w-sm w-full bg-neutral-400 rounded-2xl shadow-lg p-4 animate-pulse">
+        <div className="bg-neutral-500 h-48 w-full rounded-md mb-4"></div>
+        <div className="space-y-4">
+          <div className="bg-neutral-500 h-6 rounded w-3/4"></div>
+          <div className="bg-neutral-500 h-4 rounded w-full"></div>
+          <div className="bg-neutral-500 h-4 rounded w-5/6"></div>
+          <div className="bg-neutral-500 h-4 rounded w-2/3"></div>
+        </div>
+      </div>) ;
+    }
     
   return (
     <>
@@ -153,16 +167,15 @@ function GamesGrid({ games, genresFilter , platformFilter ,searchText ,sortFilte
         {errorMessage&&<p className="error-msg">{errorMessage}</p>}
 
         {/* this is a spinner to simulate data loading from the api */}
-        {(isLoading && !errorMessage) &&  <div className="spinner-ctr">
-          <div className="spinner"> </div>
-        </div>}
+        {(isLoading && !errorMessage) &&  loadingSkeleton()}
         
         {/* in case no filter is specified we fetch all the games list */}
         {(genresFilter === "" && platformFilter==="All Platforms" && !isLoading)&&  games
         .filter(game=> searchText!==""? game.name.toLowerCase().includes(searchText.toLowerCase()):true)
         .sort((a,b)=>handelSorting(a,b))
         .map((game) => (
-             getGamesCards(game) 
+        
+           getGamesCards(game) 
             ))}
 
         {(genresFilter !==""&&  platformFilter==="All Platforms")&&games
